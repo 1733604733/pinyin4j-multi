@@ -9,8 +9,8 @@
         <version>7</version>
     </parent>
 
-    <groupId>com.github.obiteaaron</groupId>
-    <artifactId>pinyin4j-multi</artifactId>
+    <groupId>com.github.FangStarNet</groupId>
+    <artifactId>pinyin4j-multi-ext</artifactId>
     <version>1.0.0</version>
 
     <name>Chinese to Pinyin Multi Tone</name>
@@ -18,8 +18,7 @@
         Hanyu Pinyin, Tongyong Pinyin, Wade-Giles, MPS2, Yale and Gwoyeu Romatzyh. Support multiple pronounciations and
         customized output.
     </description>
-    <url>https://github.com/obiteaaron/pinyin4j-multi</url>
-
+    <url>https://github.com/FangStarNet/pinyin4j-multi</url>
 
     <licenses>
         <license>
@@ -32,24 +31,24 @@
     <scm>
         <connection>scm:git@github.com:obiteaaron/pinyin4j-multi.git</connection>
         <developerConnection>scm:git@github.com:obiteaaron/pinyin4j-multi.git</developerConnection>
-        <url>https://github.com/obiteaaron/pinyin4j-multi.git</url>
+        <url>https://github.com/FangStarNet/pinyin4j-multi.git</url>
     </scm>
     <issueManagement>
         <system>Github Issue</system>
-        <url>https://github.com/obiteaaron/pinyin4j-multi/issues</url>
+        <url>https://github.com/FangStarNet/pinyin4j-multi/issues</url>
     </issueManagement>
     <developers>
         <developer>
-            <id>belerweb</id>
+            <id>FangStarNet</id>
             <name>Tangjun He</name>
-            <email>belerweb@gmail.com</email>
-            <url>https://github.com/belerweb</url>
+            <email>642620859@qq.com</email>
+            <url>https://github.com/FangStarNet</url>
         </developer>
         <developer>
-            <id>obiteaaron</id>
-            <name>ObiteAaron</name>
-            <email>obiteaaron@gmail.com</email>
-            <url>https://github.com/obiteaaron</url>
+            <id>shangzefeng</id>
+            <name>shangze feng</name>
+            <email>642620859@qq.com</email>
+            <url>https://github.com/shangzefeng</url>
         </developer>
     </developers>
 
@@ -65,6 +64,12 @@
             <artifactId>junit</artifactId>
             <version>4.11</version>
             <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
         </dependency>
     </dependencies>
 

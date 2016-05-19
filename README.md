@@ -1,17 +1,8 @@
-pinyin4j-multi
+pinyin4j-multi-ext
 ========
 
-Forked from https://github.com/belerweb/pinyin4j
+Forked from https://github.com/obiteaaron/pinyin4j-multi
 
-### Download ###
-Download the jar via maven:
-```xml
-<dependency>
-    <groupId>com.github.obiteaaron</groupId>
-    <artifactId>pinyin4j-multi</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
 
 
 ### 多音字识别 ###
@@ -28,4 +19,37 @@ MultiPinyinConfig.multiPinyinPath="/Users/yiboliu/my_multi_pinyin.txt"
 格式同系统的多音词库,如: 
 ```
 吸血鬼日记 (xi1,xue4,gui3,ri4,ji4)
+```
+
+多音词排列组合,如: 
+```
+System.out.println(PinyinHelper.Multitone("重庆"));
+{simple_spell=[zq][cq], full_spell=[zhongqing][chongqing], full_spell_tone=[zhong4qing4][chong2qing4]}
+
+重庆(zhong4qing4,chong2qing4) 全拼带声调
+重庆(zhongqing,chongqing)     全拼不带声调
+重庆(zq,cq)                   首字母
+
+```
+
+中文数字转阿拉伯数字,如: 
+```
+System.out.println(PinyinHelper.Chinese2Arab("三百五十六万零三百"));
+三百五十六万零三百  =》 3560300
+
+```
+
+（中文+中文数字+字母+阿拉伯数字）排序,如: 
+```
+我520我的家五十一  =》 wo300520wo3de5jia100051
+我71我的家五十二   =》 wo300071wo3de5jia100052
+
+System.out.println(PinyinHelper.getSortNameSpell("我71我的家五十二"));
+System.out.println(PinyinHelper.getSortNameSpell("我520我的家五十一"));
+        
+
+排序后
+wo300071wo3de5jia100052    我71我的家五十二
+wo300520wo3de5jia100051    我520我的家五十一
+
 ```

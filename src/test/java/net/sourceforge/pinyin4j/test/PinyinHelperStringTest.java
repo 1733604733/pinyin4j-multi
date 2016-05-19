@@ -73,16 +73,18 @@ public class PinyinHelperStringTest {
 
     @Test
     public void testMore() throws Exception {
-        BufferedReader bufferedReader =
-                new BufferedReader(new FileReader("/Users/yiboliu/pinyin.txt"));
-        BufferedWriter bufferedWriter =
-                new BufferedWriter(new FileWriter("/Users/yiboliu/pinyin_pinyin4j.txt"));
-        String line;
-        while ((line = bufferedReader.readLine()) != null) {
-            bufferedWriter.write(PinyinHelper.toHanYuPinyinString(line, outputFormat, "", true)
-                    + "\n");
-        }
-        bufferedWriter.flush();
-        bufferedWriter.close();
+    /*
+    BufferedReader bufferedReader =
+            new BufferedReader(new FileReader("/Users/yiboliu/pinyin.txt"));
+    BufferedWriter bufferedWriter =
+            new BufferedWriter(new FileWriter("/Users/yiboliu/pinyin_pinyin4j.txt"));
+    String line;
+    while ((line = bufferedReader.readLine()) != null) {
+        bufferedWriter.write(PinyinHelper.toHanYuPinyinString(line, outputFormat, "", true)
+                + "\n");
+    }
+    bufferedWriter.flush();
+    bufferedWriter.close();
+     */
     }
 }

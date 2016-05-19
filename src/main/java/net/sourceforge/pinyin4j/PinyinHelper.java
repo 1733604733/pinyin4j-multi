@@ -15,6 +15,8 @@
 
 package net.sourceforge.pinyin4j;
 
+import java.util.Map;
+import net.sourceforge.pinyin4j.fangstar.SortMultitOne;
 import net.sourceforge.pinyin4j.format.HanyuPinyinOutputFormat;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import net.sourceforge.pinyin4j.multipinyin.Trie;
@@ -338,6 +340,46 @@ public class PinyinHelper {
 
     public static boolean isEnglishLetter(char c) {
         return Character.isUpperCase(c) || Character.isLowerCase(c);
+    }
+
+    /**
+     * 获取 str 的带声调的全拼、不带声调的全拼、首字母（多音字不进行排列组合）
+     * @param str
+     * @return all_spell["full_spell_tone"] : 带声调的全拼 ； all_spell["full_spell"] :
+     * 不带声调的全拼； all_spell["simple_spell"] : 拼音首字母
+     */
+    public static Map<String, String> getNameSpell(String str) {
+        return SortMultitOne.getNameSpell(str);
+    }
+
+    /**
+     * 多音字进行排列组合
+     * @param str
+     * @return 
+     * Multitone("重庆"); {simple_spell=[zq][cq],
+     * full_spell=[zhongqing][chongqing],
+     * full_spell_tone=[zhong4qing4][chong2qing4]}
+     */
+    public static Map<String, String> Multitone(String str) {
+        return SortMultitOne.Multitone(str);
+    }
+
+    /**
+     * 获取排序字段
+     * @param str getSortNameSpell("民族三十五你是三三高250人五华路三十四米")
+     * @return    min2zu200035ni3shi4san1san1gao100250ren200005hua2lu400034mi3
+     */
+    public static String getSortNameSpell(String str) {
+        return SortMultitOne.getSortNameSpell(str);
+    }
+
+    /**
+     * 中文转阿拉伯数字（目前不支持中文负数的转换）
+     * @param str
+     * @return -1 ： 中文不是一个合法的数字
+     */
+    public static int Chinese2Arab(String str) {
+        return Integer.parseInt(SortMultitOne.Chinese2Arab(str));
     }
 
     // ! Hidden constructor
